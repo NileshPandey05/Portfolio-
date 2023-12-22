@@ -72,7 +72,7 @@ a{
 
 }
 .fadded-text{
-    margin-left: 20px;
+    margin-left: 150px;
     user-select: none;
     font-size: 4rem;
     color: rgb(231,231,231);
@@ -81,12 +81,14 @@ a{
     left: -5%;
     font-weight: bold;
     transform: all 3s;
+    position: absolute;
 }
 .hero-section-left{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap:2rem;
+    margin-left: 100px;
 }
 .userimage{
     width: 16rem;
