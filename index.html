@@ -1,104 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio-Nilesh Pandey</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="shortcut icon" href="./Images/namelogo.png" type="image/x-icon">
-</head>
-<body>
-    <div class="wrapper"> 
-
-        <div class="container">
-
-            <div class="navbar">
-                <div class="logo-container">
-                    <img src="./Images/namelogo.png" class="logo">
-                    <div class="logo-text">ilesh Pandey</div>
-                </div>
-
-                <div class="nav-item">
-                    <div><a href="#project">Project</a></div>
-                    <div><a href="#skills">Skill</a></div>
-                    <div><a href="#contactme">Contact Me</a></div>
-                </div>
-            </div>
-
-            <div class="hero-section">
-                <div class="fadded-text">Nilesh Pandey</div>
-                <div class="hero-section-left">
-                    <div class="hero-section-heading">Hi! Nilesh </div>
-                    <div class="hero-section-heading hero-section-sub-heading">
-                        I am a <span class="role"></span>
-                    </div>
-                    <div class="hero-section-description">
-                        I'm a software developer and here is my portfolio website. 
-                        Here you'll learn about my journey as a software developer
-                    </div>
-                </div>
-    
-                <div class="hero-section-right">
-                    <div class="absolute ">
-                        <img src="./Images/circle.png" class="circleimage">
-                    </div>
-                    <div class="absolute">
-                        <img src="./Images/circle.png" class="circleimage1">
-                    </div>
-                    <div class="absolute">
-                        <img src="./Images/square.png" class="squareimage">
-                    </div>
-                    <div class="absolute">
-                        <img src="./Images/square.png" class="squareimage1">
-                    </div>
-                    <div class="absolute">
-                        <img src="./Images/userimage.jpg" class="userimage">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="project-section">
-            <h2 class="page-header">Projects</h2>
-
-            <div class="project-container">
-                <div class="project-card" id="project1">
-                    <div class="project-number">01</div>
-                    <div class="project-content">
-                        <div class="project-skills-container">
-                            <img src="./Images/htmllogo.jpg" alt="">
-                            <img src="./Images/csslogo.png" alt="">
-                        </div>
-                        <h2 class="project-heading">Netflix Clone</h2>
-                        <div class="project-subHeading">Its is clone of Netflix website with the help of HTML and CSS only</div>
-                        <div class="btn-grp">
-                            <a href="">
-                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
-                            </a>
-                            <a href="">
-                                <i title="Live Link" class="fa-solid fa-link icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
-    <script>
-        var typeData = new Typed('.role',{
-            strings:[
-                "Full Stack Developer",
-                "Web Developer",
-                "Coder",
-            ],
-            loop:true,
-            typeSpeed:100,
-            backSpeed:80,
-            backDelay:1000,
-        });
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
