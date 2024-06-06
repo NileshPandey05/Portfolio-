@@ -7,5 +7,5 @@ const Loader = () => {
     </div>
   )
 }
-
+// 32:22
 export default Loader
