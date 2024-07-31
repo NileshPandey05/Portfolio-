@@ -1,3 +1,14 @@
+/**
+ * IMPORTANT: Loading glTF models into a Three.js scene is a lot of work.
+ * Before we can configure or animate our model’s meshes, we need to iterate through
+ * each part of our model’s meshes and save them separately.
+ *
+ * But luckily there is an app that turns gltf or glb files into jsx components
+ * For this model, visit https://gltf.pmnd.rs/
+ * And get the code. And then add the rest of the things.
+ * YOU DON'T HAVE TO WRITE EVERYTHING FROM SCRATCH
+ */
+
 import { a } from "@react-spring/three";
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
@@ -5,7 +16,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 
 import islandScene from "../assets/3d/island.glb";
 
-export function Island({
+export default function Island({
   isRotating,
   setIsRotating,
   setCurrentStage,
@@ -94,30 +105,30 @@ export function Island({
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(true);
-  
+
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
-  }
-  
+  };
+
   const handleTouchEnd = (e) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(false);
-  }
-  
+  };
+
   const handleTouchMove = (e) => {
     e.stopPropagation();
     e.preventDefault();
-  
+
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;
-  
+
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
     }
-  }
+  };
 
   useEffect(() => {
     // Add event listeners for pointer and keyboard events
