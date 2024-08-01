@@ -7,7 +7,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import Bird from "../models/Bird";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";
-import Island from "../models/island";
+import Island from "../models/Island";
 import HomeInfo from "../components/HomeInfo";
 
 const Home = () => {

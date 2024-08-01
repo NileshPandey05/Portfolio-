@@ -1,18 +1,47 @@
-import React, { useRef, useState } from 'react'
-
+import React, { Suspense, useRef, useState } from 'react'
+import emailsj from '@emailjs/browser'
+import conf from '../conf/conf'
+import { fromJSON } from 'postcss'
+import { Fox } from '../models/Fox'
+import { Canvas } from "@react-three/fiber";
 const Contact = () => {
 
   const formRef = useRef(null)
   const [form, setForm] = useState({name:"",email:"",message:""})
   const [isLoading, setIsLoading] = useState(false)
 
-  const handelChange = () => {
-
+  const handelChange = (e) => {
+    setForm({...form, [e.target.name]: e.target.value})
   }
 
-  const handleFocus = () => {}
+  const handleFocus = (e) => {
+    
+  }
+
   const handleBlur = () => {}
-  const handleSubmit = () => {}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true)
+    emailsj.send(
+      conf.emailjs_serviceID,
+      conf.emailjs_templetID,
+      {
+        from_name: form.name,
+        to_name: "Nilesh",
+        from_email: form.email,
+        to_email: 'nileshpandey200311@gmail.com',
+        message : form.message
+      },
+      conf.emailjs_publicID
+    ).then(()=>{
+      setIsLoading(false);
+      setForm({name:'',email:'',message:''})
+
+    }).catch((error)=>{
+      setIsLoading(false)
+      console.log(error)
+    })
+  }
 
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
@@ -22,6 +51,7 @@ const Contact = () => {
         <form 
         className='w-full flex flex-col gap-7 mt-14'
         onSubmit={handleSubmit}
+        ref={formRef}
         >
           <label className="text-black-500 font-semibold">
             Name
@@ -76,6 +106,18 @@ const Contact = () => {
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
+      </div>
+      
+      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+        <Canvas
+          camera={{
+            position: [0,0,5]
+          }}
+        >
+          <Suspense fallback={null}>
+
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   )
